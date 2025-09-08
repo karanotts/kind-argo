@@ -7,6 +7,7 @@ spec:
   generators:
     - git:
         repoURL: https://github.com/karanotts/kind-argo.git
+        revision: main
         directory:
           recurse: true
           path: clusters/*/addons
