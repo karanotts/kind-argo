@@ -7,11 +7,12 @@ spec:
   generators:
     - git:
         repoURL: https://github.com/karanotts/kind-argo.git
-        directories:
-          - path: clusters/*/addons
+        directory:
+          recurse: true
+          path: clusters/*/addons
   template:
     metadata:
-      name: '{{path.basename}}'
+      name: '{{path.basename}}-{{path.basename}}'
     spec:
       project: default
       source:
