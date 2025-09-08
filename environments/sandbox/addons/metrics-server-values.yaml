@@ -1,0 +1,2 @@
+clusterName: kind-cluster
+clusterEndpoint: https://kubernetes.default.svc
