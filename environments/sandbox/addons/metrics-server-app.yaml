@@ -11,7 +11,6 @@ spec:
     targetRevision: 3.12.1
     helm:
       valueFiles:
-        - ../../../charts/metrics-server/values.yaml
         - ../../../environments/sandbox/addons/metrics-server-values.yaml
         - ./metrics-server-values.yaml
   destination:
