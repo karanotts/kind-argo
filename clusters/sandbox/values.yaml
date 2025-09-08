@@ -1,0 +1,22 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cluster-vars
+  namespace: argocd
+data:
+  CLUSTER_NAME: "kind-cluster"
+  CLUSTER_ENDPOINT: "https://kubernetes.default.svc"
+  WORKER_NODES: "2"
+  ENVIRONMENT: "sandbox"
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cluster-vars
+  namespace: kube-system
+data:
+  CLUSTER_NAME: "kind-cluster"
+  CLUSTER_ENDPOINT: "https://kubernetes.default.svc"
+  WORKER_NODES: "2"
+  ENVIRONMENT: "sandbox"
