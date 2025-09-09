@@ -12,15 +12,22 @@ spec:
           - path: environments/*/addons
   template:
     metadata:
-      name: '{{path.basename}}'
+      name: '{{name}}-team-{{path.basename}}'
     spec:
       project: default
       source:
+        helm:
+          releaseName: '{{path.basename}}'
+          valueFiles: ['../../{{path}}/values.yaml']
+          values: |
+            cluster: '{{name}}'
+            repoURL: https://github.com/karanotts/kind-argo.git
+            targetRevision: main
         repoURL: https://github.com/karanotts/kind-argo.git
         targetRevision: main
         path: '{{path}}'
       destination:
         server: https://kubernetes.default.svc
-        namespace: kube-system
+        namespace: argocd
       syncPolicy:
         automated: {}
