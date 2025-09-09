@@ -10,6 +10,7 @@ spec:
         revision: main
         directories:
           - path: environments/*/addons
+    - clusters: {}
   template:
     metadata:
       name: '{{name}}-team-{{path.basename}}'
